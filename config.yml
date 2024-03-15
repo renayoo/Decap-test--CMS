@@ -373,4 +373,8 @@ collections: # A list of collections the CMS should be able to edit
       - label: Title
         name: title
         widget: string
+<<<<<<< HEAD
     meta: { path: { widget: string, label: "Path", index_file: "index" } }
+=======
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
+>>>>>>> de713d8b7b17df999984e2a290b7a2a802d6a365
