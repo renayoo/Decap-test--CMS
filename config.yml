@@ -409,14 +409,77 @@ collections: # A list of collections the CMS should be able to edit
   #             - { label: "File", name: "file", widget: "file" }
 
 
-  - name: pages # a nested collection
-    label: Pages
-    label_singular: "Page"
-    folder: _pages
-    create: true
-    nested: { depth: 100 }
-    fields:
-      - label: Title
-        name: title
-        widget: string
-    meta: { path: { widget: string, label: "Path", index_file: "index" } }
+  # - name: pages # a nested collection
+  #   label: Pages
+  #   label_singular: "Page"
+  #   folder: _pages
+  #   create: true
+  #   nested: { depth: 100 }
+  #   fields:
+  #     - label: Title
+  #       name: title
+  #       widget: string
+  #   meta: { path: { widget: string, label: "Path", index_file: "index" } }
+
+
+
+
+
+  #   another example/way where it is nested: 
+
+  #   collections: # A list of collections the CMS should be able to edit
+  # - name: "Content" # Main folder for content
+  #   label: "Content" # Used in the UI
+  #   create: false # Do not allow creation of documents in this collection
+  #   files:
+  #     - name: "Blog Posts" # Subfolder for blog posts
+  #       label: "Blog Posts" # Used in the UI
+  #       folder: "_posts" # Folder where the blog posts will be stored
+  #       create: true # Allow users to create new documents in this subfolder
+  #       fields: # The fields each document in this subfolder will have
+  #         - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+  #         - { label: "Draft", name: "draft", widget: "boolean", default: false }
+  #         - {
+  #             label: "Publish Date",
+  #             name: "date",
+  #             widget: "datetime",
+  #             date_format: "YYYY-MM-DD",
+  #             time_format: "HH:mm",
+  #             format: "YYYY-MM-DD HH:mm",
+  #           }
+  #         - label: "Blog Image"
+  #           name: "image"
+  #           widget: "image"
+  #           required: false
+  #           tagname: ""
+  #         - {
+  #             label: "Body",
+  #             name: "body",
+  #             widget: "markdown",
+  #             hint: "Main blog post content goes here.",
+  #           }
+  #     - name: "Our Work" # Subfolder for work gallery
+  #       label: "Our Work" # Used in the UI
+  #       folder: "_work_gallery" # Folder where the work gallery items will be stored
+  #       create: true # Allow users to create new documents in this subfolder
+  #       fields: # The fields each document in this subfolder will have
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Description", name: "description", widget: "markdown" }
+  #         - {
+  #             label: "Images",
+  #             name: "images",
+  #             widget: "list",
+  #             fields: 
+  #               - label: "Image",
+  #                 name: "image",
+  #                 widget: "image"
+  #           }
+  #     - name: "About Us" # Subfolder for about us page
+  #       label: "About Us" # Used in the UI
+  #       folder: "_about_us" # Folder where the about us page content will be stored
+  #       create: true # Allow users to create new documents in this subfolder
+  #       fields: # The fields each document in this subfolder will have
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Description", name: "description", widget: "markdown" }
+  #         # Add more fields as needed for the about us page content
+
