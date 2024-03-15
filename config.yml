@@ -1,8 +1,6 @@
 backend:
   name: test-repo
-
 site_url: https://example.com
-
 publish_mode: editorial_workflow
 media_folder: assets/uploads
 
@@ -65,9 +63,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
       - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
-      - { name: 'post', widget: relation, collection: posts, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
-
-
+      - { name: 'post', widget: relation, collection: blogPost, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
 
   - name: 'settings'
     label: 'Settings'
@@ -109,7 +105,7 @@ collections: # A list of collections the CMS should be able to edit
       - label: 'Related Post'
         name: 'post'
         widget: 'relationSupportPost'
-        collection: 'posts'
+        collection: 'blogPost'
         display_fields: ['title', 'datetime']
         search_fields: ['title', 'body']
         value_field: 'title'
@@ -140,7 +136,7 @@ collections: # A list of collections the CMS should be able to edit
           - label: 'Related Post'
             name: 'post'
             widget: 'relationSupportPost'
-            collection: 'posts'
+            collection: 'blogPost'
             search_fields: ['title', 'body']
             value_field: 'title'
           - { label: 'String', name: 'string', widget: 'string' }
@@ -185,7 +181,7 @@ collections: # A list of collections the CMS should be able to edit
                   - label: 'Related Post'
                     name: 'post'
                     widget: 'relationSupportPost'
-                    collection: 'posts'
+                    collection: 'blogPost'
                     search_fields: ['title', 'body']
                     value_field: 'title'
                   - { label: 'String', name: 'string', widget: 'string' }
