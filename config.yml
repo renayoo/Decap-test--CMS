@@ -46,6 +46,7 @@ collections: # A list of collections the CMS should be able to edit
         widget: 'image'
         required: false
         tagname: ''
+
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
   - name: 'ourWork' # Used in routes, ie.: /admin/collections/:slug/edit
@@ -61,13 +62,14 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
       - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
-      - { name: 'post', widget: relation, collection: blogPosts, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
+      - { name: 'post', widget: relation, collection: blogPost, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
 
-  - name: 'support' # all the things in one entry, for documentation and quick testing
-    label: 'Our Support'
+  - name: 'ourSupport' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Our Support' # Used in the UI
+    label_singular: 'Our Support' # Used in the UI, ie: "New Post"
     description: >
-      This collection is for managing our support. Each event can be stored as a separate document or grouped based on categories or dates.
-    folder: '_support'
+      This collection is for managing our supporters. Each post can be stored as a separate document or grouped based on categories or dates.
+    folder: '_ourWork'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
@@ -75,7 +77,8 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
       - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
-      - { name: 'post', widget: relation, collection: blogPosts, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
+      - { name: 'post', widget: relation, collection: blogPost, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
+
 
   - name: 'events' # all the things in one entry, for documentation and quick testing
     label: 'News/Events'
@@ -87,7 +90,7 @@ collections: # A list of collections the CMS should be able to edit
       - label: 'Related Post'
         name: 'post'
         widget: 'relationEventsPost'
-        collection: 'blogPosts'
+        collection: 'blogPost'
         display_fields: ['title', 'datetime']
         search_fields: ['title', 'body']
         value_field: 'title'
