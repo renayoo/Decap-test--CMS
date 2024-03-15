@@ -58,41 +58,43 @@ collections: # A list of collections the CMS should be able to edit
           hint: "Main blog post content goes here.",
         }
 
-  - name: "News/Events" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "News/Events" # Used in the UI
-    label_singular: "Event" # Used in the UI, ie: "New Post"
-    description: >
-      This collection is for managing news and events. Each event can be stored as a separate document or grouped based on categories or dates.
-    folder: "_news_events"
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    summary: "{{title}} -- {{year}}/{{month}}/{{day}}"
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
-      - { label: "Date", name: "date", widget: "datetime" } # Add a field for the event date
-      - { label: "Category", name: "category", widget: "string", hint: "Event category" }
-      - { label: "Tags", name: "tags", widget: "list", hint: "Event tags", field: { widget: "string" } } # Add a field for tags
-      - {
-          label: "Description",
-          name: "description",
-          widget: "markdown",
-          hint: "Event description goes here.",
-        }
-      - {
-          name: "gallery",
-          widget: "image",
-          choose_url: true,
-          media_library: { config: { multiple: true, max_files: 999 } },
-        }
-      - {
-          name: "post",
-          widget: relation,
-          collection: posts,
-          multiple: true,
-          search_fields: ["title"],
-          display_fields: ["title"],
-          value_field: "{{slug}}",
-        }
+- name: "News/Events" # Used in routes, ie.: /admin/collections/:slug/edit
+  label: "News/Events" # Used in the UI
+  label_singular: "Event" # Used in the UI, ie: "New Post"
+  description: >
+    This collection is for managing news and events. Each event can be stored as a separate document or grouped based on categories or dates.
+  folder: "_news_events"
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+  summary: "{{title}} -- {{year}}/{{month}}/{{day}}"
+  create: true # Allow users to create new documents in this collection
+  fields: # The fields each document in this collection have
+    - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+    - { label: "Date", name: "date", widget: "datetime" } # Add a field for the event date
+    - { label: "Category", name: "category", widget: "string", hint: "Event category" }
+    - { label: "Tags", name: "tags", widget: "list", hint: "Event tags", field: { widget: "string" } } # Add a field for tags
+    - {
+        label: "Description",
+        name: "description",
+        widget: "markdown",
+        hint: "Event description goes here.",
+      }
+    - {
+        name: "gallery",
+        widget: "image",
+        choose_url: true,
+        media_library: { config: { multiple: true, max_files: 999 } },
+      }
+    - {
+        name: "post",
+        widget: relation,
+        collection: posts,
+        multiple: true,
+        search_fields: ["title"],
+        display_fields: ["title"],
+        value_field: "{{slug}}",
+        field: { name: "post" } # Add the missing 'name' property here
+      }
+
 
       #DO WE NEED AUTHORS FOR THE EVENT/NEWS CATEGORY YES/NO? 
       # - name: authors
