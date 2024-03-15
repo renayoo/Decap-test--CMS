@@ -92,7 +92,6 @@ collections: # A list of collections the CMS should be able to edit
         search_fields: ["title"],
         display_fields: ["title"],
         value_field: "{{slug}}",
-        field: { name: "post" } # Add the missing 'name' property here
       }
 
 
