@@ -57,8 +57,8 @@ collections: # A list of collections the CMS should be able to edit
           hint: "Main content goes here.",
         }
 
-  - name: "news-blogs" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "News and Blogs" # Used in the UI
+  - name: "restaurants" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Restaurants" # Used in the UI
     label_singular: "Restaurant" # Used in the UI, ie: "New Post"
     description: >
       Restaurants is an entry type used for testing galleries, relations and other widgets.
@@ -373,8 +373,4 @@ collections: # A list of collections the CMS should be able to edit
       - label: Title
         name: title
         widget: string
-<<<<<<< HEAD
     meta: { path: { widget: string, label: "Path", index_file: "index" } }
-=======
-    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
->>>>>>> de713d8b7b17df999984e2a290b7a2a802d6a365
