@@ -1,5 +1,5 @@
 backend:
-  name: test-repo
+  - name: test-repo
 site_url: https://example.com
 publish_mode: editorial_workflow
 media_folder: assets/uploads
