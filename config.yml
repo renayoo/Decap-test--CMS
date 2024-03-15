@@ -7,8 +7,8 @@ publish_mode: editorial_workflow
 media_folder: assets/uploads
 
 collections: # A list of collections the CMS should be able to edit
-  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Posts' # Used in the UI
+  - name: 'blogPost' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Blog Post' # Used in the UI
     label_singular: 'Post' # Used in the UI, ie: "New Post"
     description: >
       The description is a great place for tone setting, high level information, and editing
@@ -52,13 +52,12 @@ collections: # A list of collections the CMS should be able to edit
 
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
-  - name: 'restaurants' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'Restaurants' # Used in the UI
-    label_singular: 'Restaurant' # Used in the UI, ie: "New Post"
+  - name: 'events' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Events' # Used in the UI
+    label_singular: 'Events' # Used in the UI, ie: "New Post"
     description: >
-      Restaurants is an entry type used for testing galleries, relations and other widgets.
-      The tests must be written in such way that adding new fields does not affect previous flows.
-    folder: '_restaurants'
+      This collection is for managing news and events. Each event can be stored as a separate document or grouped based on categories or dates.
+    folder: '_events'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
@@ -67,21 +66,8 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
       - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
       - { name: 'post', widget: relation, collection: posts, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
-      - name: authors
-        label: Authors
-        label_singular: 'Author'
-        widget: list
-        fields:
-          - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
-          - { label: 'Description', name: 'description', widget: 'markdown' }
 
-  - name: 'faq' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'FAQ' # Used in the UI
-    folder: '_faqs'
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: 'Question', name: 'title', widget: 'string', tagname: 'h1' }
-      - { label: 'Answer', name: 'body', widget: 'markdown' }
+
 
   - name: 'settings'
     label: 'Settings'
@@ -115,27 +101,14 @@ collections: # A list of collections the CMS should be able to edit
                   required: false,
                 }
 
-      - name: 'authors'
-        label: 'Authors'
-        file: '_data/authors.yml'
-        description: 'Author descriptions'
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: 'Author'
-            widget: list
-            fields:
-              - { label: 'Name', name: 'name', widget: 'string', hint: 'First and Last' }
-              - { label: 'Description', name: 'description', widget: 'markdown' }
-
-  - name: 'kitchenSink' # all the things in one entry, for documentation and quick testing
-    label: 'Kitchen Sink'
-    folder: '_sink'
+  - name: 'support' # all the things in one entry, for documentation and quick testing
+    label: 'Support'
+    folder: '_support'
     create: true
     fields:
       - label: 'Related Post'
         name: 'post'
-        widget: 'relationKitchenSinkPost'
+        widget: 'relationSupportPost'
         collection: 'posts'
         display_fields: ['title', 'datetime']
         search_fields: ['title', 'body']
@@ -166,7 +139,7 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - label: 'Related Post'
             name: 'post'
-            widget: 'relationKitchenSinkPost'
+            widget: 'relationSupportPost'
             collection: 'posts'
             search_fields: ['title', 'body']
             value_field: 'title'
@@ -211,7 +184,7 @@ collections: # A list of collections the CMS should be able to edit
                 fields:
                   - label: 'Related Post'
                     name: 'post'
-                    widget: 'relationKitchenSinkPost'
+                    widget: 'relationSupportPost'
                     collection: 'posts'
                     search_fields: ['title', 'body']
                     value_field: 'title'
