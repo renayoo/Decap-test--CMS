@@ -149,62 +149,62 @@ collections: # A list of collections the CMS should be able to edit
   #                 required: false,
   #               }
 
-      - name: "authors"
-        label: "Authors"
-        file: "_data/authors.yml"
-        description: "Author descriptions"
-        fields:
-          - name: authors
-            label: Authors
-            label_singular: "Author"
-            widget: list
-            fields:
-              - {
-                  label: "Name",
-                  name: "name",
-                  widget: "string",
-                  hint: "First and Last",
-                }
-              - {
-                  label: "Description",
-                  name: "description",
-                  widget: "markdown",
-                }
+      # - name: "authors"
+      #   label: "Authors"
+      #   file: "_data/authors.yml"
+      #   description: "Author descriptions"
+      #   fields:
+      #     - name: authors
+      #       label: Authors
+      #       label_singular: "Author"
+      #       widget: list
+      #       fields:
+      #         - {
+      #             label: "Name",
+      #             name: "name",
+      #             widget: "string",
+      #             hint: "First and Last",
+      #           }
+      #         - {
+      #             label: "Description",
+      #             name: "description",
+      #             widget: "markdown",
+      #           }
 
-  - name: "Support"
-    label: "Support"
-    folder: "_support"
-    create: true
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Description"
-        name: "description"
-        widget: "markdown"
-      - label: "Contact Form"
-        name: "contact_form"
-        widget: "markdown"
-        hint: "Embed code for a contact form"
+  # - name: "Support"
+  #   label: "Support"
+  #   folder: "_support"
+  #   create: true
+  #   fields:
+  #     - label: "Title"
+  #       name: "title"
+  #       widget: "string"
+  #     - label: "Description"
+  #       name: "description"
+  #       widget: "markdown"
+  #     - label: "Contact Form"
+  #       name: "contact_form"
+  #       widget: "markdown"
+  #       hint: "Embed code for a contact form"
     
-  - name: "Gallery"
-    label: "Gallery"
-    folder: "_gallery"
-    create: true
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
-      - label: "Description"
-        name: "description"
-        widget: "markdown"
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        fields: 
-        - label: "Image"
-          name: "image"
-          widget: "image"
+  # - name: "Gallery"
+  #   label: "Gallery"
+  #   folder: "_gallery"
+  #   create: true
+  #   fields:
+  #     - label: "Title"
+  #       name: "title"
+  #       widget: "string"
+  #     - label: "Description"
+  #       name: "description"
+  #       widget: "markdown"
+  #     - label: "Images"
+  #       name: "images"
+  #       widget: "list"
+  #       fields: 
+  #       - label: "Image"
+  #         name: "image"
+  #         widget: "image"
       
       
 
