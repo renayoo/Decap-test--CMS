@@ -7,7 +7,7 @@ media_folder: assets/uploads
 collections: # A list of collections the CMS should be able to edit
   - name: 'posts'
     label: 'Posts'
-    collections:
+    files:
       - name: 'blogPost' # Used in routes, ie.: /admin/collections/:slug/edit
         label: 'Blog Post' # Used in the UI
         label_singular: 'Post' # Used in the UI, ie: "New Post"
