@@ -222,33 +222,17 @@ collections: # A list of collections the CMS should be able to edit
               - { label: 'Image', name: 'image', widget: 'image' }
               - { label: 'File', name: 'file', widget: 'file' }
 
-- name: pages # a nested collection
-  label: Pages
-  label_singular: 'Page'
-  folder: _pages
-  create: true
-  nested: { depth: 100 }
-  fields:
-    - label: Title
-      name: title
-      widget: string
-    - label: Content
-      name: content
-      widget: markdown
-    - label: Image
-      name: image
-      widget: image
-  meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
-  create: true
-  files:
-    - label: About Us
-      name: about-us
-      file: about-us.md
-      fields:
-        - { label: Title, name: title, widget: string }
-        - { label: Content, name: content, widget: markdown }
-        - { label: Image, name: image, widget: image }
-
+  - name: pages # a nested collection
+    label: Pages
+    label_singular: 'Page'
+    folder: _pages
+    create: true
+    nested: { depth: 100 }
+    fields:
+      - label: Title
+        name: title
+        widget: string
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
 
   - name: 'gallery' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Gallery' # Used in the UI
