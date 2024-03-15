@@ -50,21 +50,6 @@ collections: # A list of collections the CMS should be able to edit
 
       - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
 
-  - name: 'about' # Used in routes, ie.: /admin/collections/:slug/edit
-    label: 'About us' # Used in the UI
-    label_singular: 'About us' # Used in the UI, ie: "New Post"
-    description: >
-      This collection is for managing content about us.
-    folder: '_aboutUs'
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
-    create: true # Allow users to create new documents in this collection
-    fields: # The fields each document in this collection have
-      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
-      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
-      - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
-      - { name: 'post', widget: relation, collection: blogPost, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
-
   - name: 'ourWork' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Our Work' # Used in the UI
     label_singular: 'Our Work' # Used in the UI, ie: "New Post"
@@ -86,6 +71,21 @@ collections: # A list of collections the CMS should be able to edit
     description: >
       This collection is for managing our supporters. Each post can be stored as a separate document or grouped based on categories or dates.
     folder: '_ourSupport'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Body', name: 'body', widget: 'markdown', hint: 'Main content goes here.' }
+      - { name: 'gallery', widget: 'image', choose_url: true, media_library: {config: {multiple: true, max_files: 999}}}
+      - { name: 'post', widget: relation, collection: blogPost, multiple: true, search_fields: [ "title" ], display_fields: [ "title" ], value_field: "{{slug}}"}
+
+  - name: 'about' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'About us' # Used in the UI
+    label_singular: 'About us' # Used in the UI, ie: "New Post"
+    description: >
+      This collection is for managing content about us.
+    folder: '_aboutUs'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
