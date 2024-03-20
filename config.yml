@@ -4,8 +4,9 @@ backend:
   branch: main
   base_url: https://decap-oauth-vercel.vercel.app
   auth_endpoint: /api/auth
-  
-# backend:
+
+media_folder: public/content/images
+public_folder: /public/content/images
 #   name: test-repo
 #   site_url: https://example.com
 #   publish_mode: editorial_workflow
