@@ -1,9 +1,5 @@
 backend:
-  name: github
-  repo: renayoo/Decap-test--CMS
-  branch: main
-  base_url: https://decap-oauth-vercel.vercel.app
-  auth_endpoint: /api/auth
+  name: test-repo
 
 site_url: https://example.com
 
