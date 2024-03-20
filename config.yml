@@ -1,16 +1,17 @@
+backend:
+  name: github
+  repo: renayoo/Decap-test--CMS
+  branch: main
+  base_url: https://decap-oauth-vercel.vercel.app
+  auth_endpoint: /api/auth
+  
 # backend:
 #   name: test-repo
 #   site_url: https://example.com
 #   publish_mode: editorial_workflow
 #   media_folder: assets/uploads
-
-backend:
-  name: test-repo
-  site_url: https://example.com
-  publish_mode: editorial_workflow
-  media_folder: assets/uploads
-  media_library:
-    name: testing
+#   media_library:
+#     name: testing
 
 collections: # A list of collections the CMS should be able to edit
   - name: 'blogPost' # Used in routes, ie.: /admin/collections/:slug/edit
